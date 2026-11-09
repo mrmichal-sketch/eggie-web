@@ -15,8 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch.png">
-<link rel="preload" as="image" href="assets/hero-land.jpg" media="(min-width: 801px)">
-<link rel="preload" as="image" href="assets/hero-port.jpg" media="(max-width: 800px)">
+<link rel="preload" as="image" href="assets/fly-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -39,17 +38,14 @@
 <style>
   :root {
     --ink: #102b43;
-    --ink-soft: #1b3d58;
     --cream: #f8f4e9;
-    --cream-dim: #e7e0d0;
     --yolk: #ffda65;
-    --yolk-deep: #e2b63a;
+    --yolk-ink: #8a6208;
     --gas: #c6d84a;
-    --steel: #8ea0ae;
-    --muted: #c5d4e0;
     --paper: #f4efe4;
     --text: #163044;
     --quiet: #4d6272;
+    --line: #d9d0be;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -59,76 +55,94 @@
     color: var(--text);
     font-family: Nunito, "Segoe UI", sans-serif;
     font-size: 1.125rem;
-    line-height: 1.5;
+    line-height: 1.45;
     text-wrap: pretty;
   }
-  img { max-width: 100%; }
-  a { color: var(--yolk-deep); text-underline-offset: 3px; }
-  a:hover { color: var(--ink); }
-  :focus-visible { outline: 3px solid var(--yolk); outline-offset: 3px; }
+  img, video { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--yolk-ink); outline-offset: 3px; }
   html[data-lang="en"] .cs,
   html[data-lang="cs"] .en,
   html:not([data-lang]) .cs { display: none !important; }
-  button.lang-btn, a.slot { font: inherit; }
+  button, a.go { font: inherit; }
 
-  .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
-    grid-template-rows: minmax(100svh, auto);
-    min-height: 100svh;
-    background: var(--ink);
-    color: var(--cream);
-  }
-  .hero-frame {
-    display: block;
-    position: relative;
-    min-height: 100%;
-    background: var(--ink);
-  }
-  .hero-frame img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 36% 42%;
-    display: block;
-  }
-  .hero-copy {
+  .bar {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    gap: 1.25rem;
-    padding: 1.1rem 1.5rem 1.4rem;
-    background: var(--ink);
-    border-left: 8px solid var(--yolk);
+    gap: 1rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0.85rem 1.25rem 0.35rem;
   }
-  .lang {
-    display: flex;
-    gap: 0.25rem;
-    align-self: flex-end;
-  }
-  .lang button {
-    min-width: 3rem;
-    min-height: 2.75rem;
-    padding: 0.4rem 0.7rem;
-    border: 0;
-    background: transparent;
-    color: var(--muted);
+  .brand {
+    margin: 0;
     font-family: Fredoka, Nunito, sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.35rem;
+    letter-spacing: -0.03em;
+  }
+  .brand span { color: var(--quiet); font-weight: 600; }
+  .lang { display: flex; gap: 0.15rem; }
+  .lang button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.35rem 0.65rem;
+    border: 0;
+    background: transparent;
+    color: var(--quiet);
+    font-family: Fredoka, Nunito, sans-serif;
+    font-weight: 700;
     letter-spacing: 0.08em;
     cursor: pointer;
   }
   .lang button[aria-pressed="true"] {
-    color: var(--yolk);
+    color: var(--ink);
     box-shadow: inset 0 -3px 0 var(--yolk);
   }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(17.5rem, 0.72fr);
+    gap: 1.75rem 2rem;
+    align-items: center;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0.6rem 1.25rem 2.25rem;
+  }
+  .stage {
+    position: relative;
+    background: var(--ink);
+    border-bottom: 7px solid var(--yolk);
+  }
+  .stage video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 960 / 546;
+    object-fit: cover;
+    background: var(--ink) url("assets/fly-poster.jpg") center / cover no-repeat;
+  }
+  .sound {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    min-height: 2.75rem;
+    padding: 0.35rem 0.8rem;
+    border: 0;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: Fredoka, Nunito, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .sound[aria-pressed="true"] { background: var(--yolk); color: var(--ink); }
+
   .kicker {
-    margin: 0 0 0.6rem;
-    color: var(--muted);
-    font-size: 0.8rem;
+    margin: 0 0 0.35rem;
+    color: var(--quiet);
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -137,129 +151,99 @@
     margin: 0;
     font-family: Fredoka, Nunito, sans-serif;
     font-weight: 700;
-    font-size: clamp(3.6rem, 6.4vw, 5.4rem);
-    line-height: 0.92;
-    padding-bottom: 0.12em;
+    font-size: clamp(3.4rem, 6vw, 5rem);
+    line-height: 0.9;
     letter-spacing: -0.03em;
   }
   .sub {
-    margin: 0.35rem 0 0;
-    color: var(--yolk);
+    margin: 0.3rem 0 0;
+    color: var(--yolk-ink);
     font-family: Fredoka, Nunito, sans-serif;
     font-weight: 600;
-    font-size: clamp(1.6rem, 2.4vw, 2.15rem);
+    font-size: clamp(1.45rem, 2.2vw, 1.9rem);
     line-height: 1;
   }
   .tagline {
-    margin: 0.85rem 0 0.4rem;
-    font-size: 1.35rem;
+    margin: 0.9rem 0 0.35rem;
+    font-size: 1.28rem;
     font-weight: 700;
     line-height: 1.25;
   }
-  .lead {
-    margin: 0;
-    color: var(--cream-dim);
-    font-size: 1.05rem;
-  }
+  .lead { margin: 0; color: var(--quiet); font-size: 1.02rem; }
   .where {
-    margin: 1.15rem 0 0.55rem;
+    margin: 1.15rem 0 0.5rem;
     font-family: Fredoka, Nunito, sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--quiet);
   }
-  .slots { display: flex; flex-direction: column; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
-  .slot {
+  .slots { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+  .go, .wait {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;
     min-height: 3.25rem;
     padding: 0.7rem 0.9rem;
-    border: 1.5px dashed #3d5c74;
-    color: var(--cream);
     text-decoration: none;
   }
-  .slot b {
+  .go { background: var(--yolk); color: var(--ink); }
+  .go:hover { background: #ffe48a; }
+  .go b, .wait b {
     font-family: Fredoka, Nunito, sans-serif;
     font-weight: 600;
     font-size: 1.15rem;
   }
-  .slot span { color: var(--muted); font-size: 0.95rem; text-align: right; }
-  .slot.ready {
-    border-style: solid;
-    border-color: var(--yolk);
-    background: var(--yolk);
-    color: var(--ink);
-  }
-  .slot.ready span { color: var(--ink-soft); }
-  .slot.ready:hover { background: #ffe48a; color: var(--ink); }
-  .install {
-    margin: 0.7rem 0 0;
-    color: var(--muted);
-    font-size: 0.92rem;
-  }
+  .go span, .wait span { font-size: 0.95rem; }
+  .wait { border: 1.5px solid var(--line); color: var(--quiet); margin: 0; }
+  .install { margin: 0.7rem 0 0; color: var(--quiet); font-size: 0.92rem; }
 
   .run {
-    padding: 3.5rem 1.5rem 2.5rem;
     max-width: 72rem;
     margin: 0 auto;
+    padding: 0.5rem 1.25rem 2.5rem;
   }
   .run h2 {
-    margin: 0 0 1.25rem;
+    margin: 0 0 0.9rem;
     font-family: Fredoka, Nunito, sans-serif;
     font-weight: 700;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1;
     letter-spacing: -0.02em;
   }
-  .path {
-    display: flex;
-    flex-wrap: wrap;
+  .beats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 1.25rem;
     margin: 0;
     padding: 0;
     list-style: none;
     border-top: 3px solid var(--ink);
   }
-  .path li {
-    flex: 1 1 8.5rem;
-    padding: 0.85rem 0.9rem 1.1rem 0;
-    border-bottom: 3px solid var(--ink);
-    margin-right: 0.8rem;
-  }
-  .path strong {
+  .beats li { padding: 0.85rem 0 0.2rem; border-bottom: 3px solid var(--ink); }
+  .beats strong {
     display: block;
     font-family: Fredoka, Nunito, sans-serif;
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 1.55rem;
     line-height: 1.05;
   }
-  .path li > span {
+  .beats li > span {
     display: block;
-    margin-top: 0.2rem;
+    margin: 0.25rem 0 0.85rem;
     color: var(--quiet);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
   }
-  .path .gas strong { box-shadow: inset 0 -0.45rem 0 var(--gas); }
-  .path .knife { flex-basis: 11rem; }
-  .path .knife strong { color: #5c6e7c; letter-spacing: 0.04em; }
-  .note {
-    max-width: 38rem;
-    margin: 1.75rem 0 0;
-    font-size: 1.12rem;
-  }
-  .note p { margin: 0 0 0.8rem; }
-  .fine {
-    margin: 0;
-    color: var(--quiet);
-    font-size: 1rem;
-  }
+  .beats .gas strong { box-shadow: inset 0 -0.38rem 0 var(--gas); }
+  .beats .knife strong { color: #5c6e7c; }
+  .note { max-width: 40rem; margin: 1.35rem 0 0; font-size: 1.08rem; }
+  .note p { margin: 0 0 0.75rem; }
+  .fine { margin: 0; color: var(--quiet); font-size: 1rem; }
 
   footer {
-    margin-top: 2rem;
-    padding: 1.5rem 1.5rem 2rem;
+    padding: 1.35rem 1.25rem 1.8rem;
     background: var(--ink);
     color: var(--cream-dim);
     font-size: 0.98rem;
@@ -273,23 +257,17 @@
     justify-content: space-between;
     align-items: baseline;
   }
-  footer a { color: var(--yolk); }
+  footer a { color: var(--yolk); text-underline-offset: 3px; }
   footer a:hover { color: white; }
   footer nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; }
-  .cz-note { margin: 0.8rem auto 0; max-width: 72rem; color: var(--muted); font-size: 0.9rem; }
+  footer p { margin: 0; }
+  .cz-note { max-width: 72rem; margin: 0.75rem auto 0; color: #9aafbf; font-size: 0.9rem; }
 
   @media (max-width: 800px) {
-    .hero { grid-template-columns: 1fr; grid-template-rows: 62svh auto; min-height: 0; }
-    .hero-frame { min-height: 0; height: 62svh; }
-    .hero-frame img { position: absolute; height: 100%; object-position: center 18%; }
-    .hero-copy {
-      border-left: 0;
-      border-top: 8px solid var(--yolk);
-      padding: 1rem 1.15rem 1.4rem;
-      gap: 1.4rem;
-    }
-    h1 { font-size: 4.4rem; }
-    .path li { flex-basis: 46%; margin-right: 0; padding-right: 0.6rem; }
+    .hero { grid-template-columns: 1fr; gap: 1.15rem; padding-top: 0.35rem; }
+    h1 { font-size: 3.6rem; }
+    .beats { grid-template-columns: 1fr 1fr; }
+    .beats li:nth-child(odd) { padding-right: 0.6rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -297,67 +275,55 @@
 </style>
 </head>
 <body>
-  <header class="hero">
-    <picture class="hero-frame">
-      <source media="(max-width: 800px)" srcset="assets/hero-port.jpg">
-      <img src="assets/hero-land.jpg" width="1344" height="768" alt="Eggie, a grinning egg in denim shorts, leaping off a kitchen knife with a jet of gas.">
-    </picture>
-    <div class="hero-copy">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
-        <button type="button" class="lang-btn" data-set-lang="cs">CS</button>
-      </div>
-      <div>
-        <p class="kicker"><span class="en">One egg. One wild flight.</span><span class="cs">Jedno vajíčko. Jeden divoký let.</span></p>
-        <h1>Eggie</h1>
-        <p class="sub">Fart &amp; Fly</p>
-        <p class="tagline"><span class="en">Hold to rise. Release to fall. Don't hit the knife.</span><span class="cs">Drž a stoupej. Pusť a padáš. Ať tě nůž mine.</span></p>
-        <p class="lead"><span class="en">An egg in shorts, a tuft of hair, and a tank of gas that runs out. Eat, or the thrust stops.</span><span class="cs">Vajíčko v šortkách, patka vlasů a nádrž plynu, která dojde. Jez, nebo pohon skončí.</span></p>
-        <h2 class="where"><span class="en">Where to play</span><span class="cs">Kde hrát</span></h2>
-        <ul class="slots">
-          <li><a class="slot ready" id="windows" href="https://github.com/mrmichal-sketch/eggie-web/releases/download/v1.0.10/Eggie-Windows-1.0.10.zip"><b><span class="en">Windows</span><span class="cs">Windows</span></b><span class="en">Download · 45 MB</span><span class="cs">Stáhnout · 45 MB</span></a></li>
-          <li><a class="slot ready" id="android" href="https://github.com/mrmichal-sketch/eggie-web/releases/download/v1.0.10/Eggie-Android-1.0.10.apk"><b>Android</b><span class="en">Download · 86 MB</span><span class="cs">Stáhnout · 86 MB</span></a></li>
-          <li><p class="slot" id="app-store"><b>App Store</b><span class="en">Waiting on Apple</span><span class="cs">Čeká na Apple</span></p></li>
-        </ul>
-        <p class="install"><span class="en">Windows: unzip and run. No installer. The system may warn that the publisher is unknown. Android 7 or newer, 64-bit ARM. Allow install from the browser.</span><span class="cs">Windows: rozbal a spusť. Bez instalace. Systém může varovat, že vydavatel je neznámý. Android 7 nebo novější, 64bit ARM. Povol instalaci z prohlížeče.</span></p>
-      </div>
+  <header class="bar">
+    <p class="brand">Eggie <span>Fart &amp; Fly</span></p>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-set-lang="cs">CS</button>
     </div>
   </header>
 
+  <section class="hero">
+    <div class="stage">
+      <video id="fly" poster="assets/fly-poster.jpg" width="960" height="546" muted loop playsinline preload="metadata" src="assets/fly.mp4"></video>
+      <button type="button" class="sound" id="sound" aria-pressed="false">
+        <span class="en">Sound</span><span class="cs">Zvuk</span>
+      </button>
+    </div>
+    <div class="copy">
+      <p class="kicker"><span class="en">One egg. One wild flight.</span><span class="cs">Jedno vajíčko. Jeden divoký let.</span></p>
+      <h1>Eggie</h1>
+      <p class="sub">Fart &amp; Fly</p>
+      <p class="tagline"><span class="en">Hold to rise. Release to fall. Don't hit the knife.</span><span class="cs">Drž a stoupej. Pusť a padáš. Ať tě nůž mine.</span></p>
+      <p class="lead"><span class="en">An egg in shorts, a tuft of hair, and a tank of gas that runs out. Eat, or the thrust stops.</span><span class="cs">Vajíčko v šortkách, patka vlasů a nádrž plynu, která dojde. Jez, nebo pohon skončí.</span></p>
+      <h2 class="where"><span class="en">Where to play</span><span class="cs">Kde hrát</span></h2>
+      <ul class="slots">
+        <li><a class="go" id="windows" href="https://github.com/mrmichal-sketch/eggie-web/releases/download/v1.0.10/Eggie-Windows-1.0.10.zip"><b>Windows</b><span>45 MB</span></a></li>
+        <li><a class="go" id="android" href="https://github.com/mrmichal-sketch/eggie-web/releases/download/v1.0.10/Eggie-Android-1.0.10.apk"><b>Android</b><span>86 MB</span></a></li>
+        <li><p class="wait" id="app-store"><b>App Store</b><span class="en">Waiting on Apple</span><span class="cs">Čeká na Apple</span></p></li>
+      </ul>
+      <p class="install"><span class="en">Version 1.0.10. Windows: unzip and run. No installer. The system may warn that the publisher is unknown. Android 7 or newer, 64-bit ARM. Allow install from the browser.</span><span class="cs">Verze 1.0.10. Windows: rozbal a spusť. Bez instalace. Systém může varovat, že vydavatel je neznámý. Android 7 nebo novější, 64bit ARM. Povol instalaci z prohlížeče.</span></p>
+    </div>
+  </section>
+
   <main class="run" id="how">
     <h2><span class="en">How a run goes</span><span class="cs">Jak běží jedno kolo</span></h2>
-    <ol class="path">
-      <li>
-        <strong><span class="en">Hold</span><span class="cs">Drž</span></strong>
-        <span class="en">one finger, or space</span><span class="cs">jeden prst, nebo mezerník</span>
-      </li>
+    <ol class="beats">
       <li class="gas">
-        <strong><span class="en">Gas</span><span class="cs">Plyn</span></strong>
-        <span class="en">the jet is visible</span><span class="cs">proud je vidět</span>
-      </li>
-      <li>
-        <strong><span class="en">Rise</span><span class="cs">Nahoru</span></strong>
-        <span class="en">thrust</span><span class="cs">pohon</span>
+        <strong><span class="en">Hold</span><span class="cs">Drž</span></strong>
+        <span class="en">One finger, or space. The jet shows. You rise.</span><span class="cs">Jeden prst, nebo mezerník. Proud je vidět. Stoupáš.</span>
       </li>
       <li>
         <strong><span class="en">Let go</span><span class="cs">Pusť</span></strong>
-        <span class="en">the button</span><span class="cs">tlačítko</span>
-      </li>
-      <li>
-        <strong><span class="en">Fall</span><span class="cs">Pád</span></strong>
-        <span class="en">gravity</span><span class="cs">gravitace</span>
+        <span class="en">The button. Gravity. You fall.</span><span class="cs">Tlačítko. Gravitace. Padáš.</span>
       </li>
       <li>
         <strong><span class="en">Eat</span><span class="cs">Jez</span></strong>
-        <span class="en">apple, bread, or cheese</span><span class="cs">jablko, chleba, nebo sýr</span>
-      </li>
-      <li>
-        <strong>30</strong>
-        <span class="en">the gap tightens</span><span class="cs">mezera se zúží</span>
+        <span class="en">Apple, bread, or cheese. Or the thrust stops.</span><span class="cs">Jablko, chleba, nebo sýr. Jinak pohon skončí.</span>
       </li>
       <li class="knife">
         <strong><span class="en">Knife</span><span class="cs">Nůž</span></strong>
-        <span class="en">miss it</span><span class="cs">mine ho</span>
+        <span class="en">Miss it. At 30 the gap tightens.</span><span class="cs">Mine ho. V třicítce se mezera zúží.</span>
       </li>
     </ol>
     <div class="note">
@@ -373,20 +339,23 @@
         <a href="https://eggie-leaderboard.eggie-michal-starek.workers.dev/support"><span class="en">Support</span><span class="cs">Podpora</span></a>
         <a href="mailto:staremicha@gmail.com">staremicha@gmail.com</a>
       </nav>
-      <p style="margin:0">Michal Starek · <span class="en">App Store rating 13+</span><span class="cs">V App Store od 13 let</span></p>
+      <p>Michal Starek · <span class="en">App Store rating 13+</span><span class="cs">V App Store od 13 let</span></p>
     </div>
     <p class="cz-note"><span class="en">eggie.cz opens this page in Czech. Privacy and support are still in English.</span><span class="cs">eggie.cz tuhle stránku otevře česky. Zásady soukromí a podpora jsou zatím anglicky.</span></p>
   </footer>
 <script>
 (function () {
-  var titles = {
-    en: "Eggie: Fart & Fly",
-    cs: "Eggie: Fart & Fly"
-  };
+  var titles = { en: "Eggie: Fart & Fly", cs: "Eggie: Fart & Fly" };
   var descriptions = {
     en: "Hold to rise. Release to fall. Dodge the knives, eat to keep the gas, and chase a world top 10.",
     cs: "Drž a stoupej. Pusť a padáš. Mine nože, jez, ať nedojde plyn, a hoň světovou top 10."
   };
+  var alts = {
+    en: "Eggie, a grinning egg in denim shorts, launches off a kitchen knife on a fart and bonks a cloud.",
+    cs: "Eggie, usměvavé vajíčko v riflových šortkách, vystartuje z nože na prd a narazí do mraku."
+  };
+  var video = document.getElementById("fly");
+  var sound = document.getElementById("sound");
   function apply(lang) {
     document.documentElement.lang = lang;
     document.documentElement.dataset.lang = lang;
@@ -396,12 +365,7 @@
     document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-set-lang") === lang ? "true" : "false");
     });
-    var img = document.querySelector(".hero-frame img");
-    if (img) {
-      img.alt = lang === "cs"
-        ? "Eggie, usměvavé vajíčko v riflových šortkách, skáče z kuchyňského nože s proudem plynu."
-        : "Eggie, a grinning egg in denim shorts, leaping off a kitchen knife with a jet of gas.";
-    }
+    if (video) video.setAttribute("aria-label", alts[lang]);
   }
   function setLang(lang, persist) {
     apply(lang);
@@ -418,6 +382,16 @@
       setLang(btn.getAttribute("data-set-lang"), true);
     });
   });
+  if (video && sound) {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) video.pause();
+    else video.play().catch(function () {});
+    sound.addEventListener("click", function () {
+      video.muted = !video.muted;
+      sound.setAttribute("aria-pressed", video.muted ? "false" : "true");
+      if (video.paused) video.play().catch(function () {});
+    });
+  }
 })();
 </script>
 </body>
