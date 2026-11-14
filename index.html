@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eggie: Fart &amp; Fly</title>
+<title>Eggie games — Fart &amp; Fly · Fart &amp; Drive</title>
 <meta name="description" content="Hold to rise. Release to fall. Dodge the knives, eat to keep the gas, and chase a world top 10.">
 <meta name="theme-color" content="#102b43">
 <meta property="og:type" content="website">
@@ -272,11 +272,16 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
+.ride-section {max-width:72rem;margin:3rem auto;padding:2rem 1.25rem;display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;border-top:3px solid var(--yolk);scroll-margin-top:1rem}
+.ride-art img {width:100%;border-radius:24px;box-shadow:0 15px 40px #102b4333}
+.ride-copy h2 {font-family:Fredoka,Nunito,sans-serif;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;margin:.6rem 0 1rem}
+.ride-qr {display:flex;align-items:center;gap:1.2rem;margin-top:1.4rem}.ride-qr img {background:white;padding:6px;border-radius:12px;flex-shrink:0}.ride-qr p {font-size:1rem}
+@media(max-width:800px){.ride-section{grid-template-columns:1fr}.ride-qr{gap:.8rem}.ride-qr img{width:128px;height:128px}}
 </style>
 </head>
 <body>
   <header class="bar">
-    <p class="brand">Eggie <span>Fart &amp; Fly</span></p>
+    <p class="brand">Eggie <span>Fart &amp; Fly · Fart &amp; Drive</span></p>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" class="lang-btn" data-set-lang="en">EN</button>
       <button type="button" class="lang-btn" data-set-lang="cs">CS</button>
@@ -332,6 +337,24 @@
     </div>
   </main>
 
+
+  <section class="ride-section" id="ride-test" aria-labelledby="ride-title">
+    <div class="ride-art"><img src="assets/ride-hero.jpg" alt="Eggie rides a skateboard on an elevated roller-coaster track" width="1536" height="1024" loading="lazy"></div>
+    <div class="ride-copy">
+      <p class="kicker"><span class="en">Next up: a wild ride. Android testers wanted.</span><span class="cs">Nově: divoká jízda. Hledáme testery pro Android.</span></p>
+      <h2 id="ride-title">Eggie: Fart &amp; Drive</h2>
+      <p><span class="en">A skateboard. Fart-powered acceleration. Wooden tracks high above the ground. Race through loops, dare the jumps and keep your shell in one piece.</span><span class="cs">Skateboard, prdový pohon a dřevěná dráha vysoko nad zemí. Projeď lopingy, zvládni skoky a udrž skořápku pohromadě.</span></p>
+      <p><span class="en">Help us fine-tune steering and performance on real Android phones. Tell us what feels great — and where Eggie cracks.</span><span class="cs">Pomoz nám doladit ovládání a výkon na skutečných telefonech s Androidem. Řekni nám, co tě baví — a kde Eggie praská.</span></p>
+      <ul class="slots">
+        <li><p class="wait"><b>App Store</b><span class="en">Waiting on Apple</span><span class="cs">Čekáme na Apple</span></p></li>
+        <li><a class="go" href="mailto:staremicha@gmail.com?subject=Eggie%20Drive%20Android%20test"><b><span class="en">I want to test on Android</span><span class="cs">Chci testovat na Androidu</span></b><span class="en">Contact us</span><span class="cs">Napiš nám</span></a></li>
+      </ul>
+      <p class="install"><span class="en">Google Play testing is being prepared. Email us to express interest; this does not enroll you yet. We will send the official invitation when testing opens. You will need a Google account and must confirm participation yourself.</span><span class="cs">Testování přes Google Play připravujeme. Napiš nám, že máš zájem; tím se zatím do testu nepřihlašuješ. Jakmile test otevřeme, pošleme oficiální pozvánku. Budeš potřebovat Google účet a účast sám potvrdíš.</span></p>
+      <div class="ride-qr"><img src="assets/ride-test-qr.png" alt="QR: eggie.fun Android testing information" width="156" height="156" loading="lazy"><p><span class="en">Open this testing page on your phone.<br>Scan the QR code or tap the button above.</span><span class="cs">Otevři si tuto stránku na telefonu.<br>Naskenuj QR kód, nebo klepni na tlačítko výše.</span></p></div>
+      <p class="install"><a href="https://eggie-ride-beta.eggie-michal-starek.workers.dev/privacy"><span class="en">Drive privacy</span><span class="cs">Soukromí hry Drive</span></a></p>
+    </div>
+  </section>
+
   <footer>
     <div class="inner">
       <nav aria-label="Site">
@@ -345,7 +368,7 @@
   </footer>
 <script>
 (function () {
-  var titles = { en: "Eggie: Fart & Fly", cs: "Eggie: Fart & Fly" };
+  var titles = { en: "Eggie games — Fart & Fly · Fart & Drive", cs: "Hry Eggie — Fart & Fly · Fart & Drive" };
   var descriptions = {
     en: "Hold to rise. Release to fall. Dodge the knives, eat to keep the gas, and chase a world top 10.",
     cs: "Drž a stoupej. Pusť a padáš. Mine nože, jez, ať nedojde plyn, a hoň světovou top 10."
