@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eggie games — Fart &amp; Fly · Fart &amp; Drive</title>
-<meta name="description" content="Hold to rise. Release to fall. Dodge the knives, eat to keep the gas, and chase a world top 10.">
+<title>Eggie games — Fart &amp; Fly 3D · Fart &amp; Drive</title>
+<meta name="description" content="Fly through a 3D cave, dodge stalactites and chase a worldwide Top 10.">
 <meta name="theme-color" content="#102b43">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Eggie: Fart &amp; Fly">
-<meta property="og:description" content="Hold to rise. Release to fall. Dodge the knives, eat to keep the gas.">
-<meta property="og:image" content="https://mrmichal-sketch.github.io/eggie-web/assets/og.jpg">
+<meta property="og:title" content="Eggie Fart and Fly 3D">
+<meta property="og:description" content="Fly through a 3D cave, dodge stalactites and collect food to refuel.">
+<meta property="og:image" content="https://mrmichal-sketch.github.io/eggie-web/assets/fly-3d-poster.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch.png">
-<link rel="preload" as="image" href="assets/fly-poster.jpg">
+<link rel="preload" as="image" href="assets/fly-3d-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -121,7 +121,7 @@
     height: auto;
     aspect-ratio: 960 / 546;
     object-fit: cover;
-    background: var(--ink) url("assets/fly-poster.jpg") center / cover no-repeat;
+    background: var(--ink) url("assets/fly-3d-poster.jpg") center / cover no-repeat;
   }
   .sound {
     position: absolute;
@@ -237,7 +237,7 @@
     font-size: 0.98rem;
   }
   .beats .gas strong { box-shadow: inset 0 -0.38rem 0 var(--gas); }
-  .beats .knife strong { color: #5c6e7c; }
+  .beats .spikes strong { color: #5c6e7c; }
   .note { max-width: 40rem; margin: 1.35rem 0 0; font-size: 1.08rem; }
   .note p { margin: 0 0 0.75rem; }
   .fine { margin: 0; color: var(--quiet); font-size: 1rem; }
@@ -297,7 +297,7 @@
 </head>
 <body>
   <header class="bar">
-    <p class="brand">Eggie <span>Fart &amp; Fly · Fart &amp; Drive</span></p>
+    <p class="brand">Eggie <span>Fart &amp; Fly 3D · Fart &amp; Drive</span></p>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" class="lang-btn" data-set-lang="en">EN</button>
       <button type="button" class="lang-btn" data-set-lang="cs">CS</button>
@@ -308,7 +308,7 @@
 
   <section class="hero">
     <div class="stage">
-      <video id="fly" poster="assets/fly-poster.jpg" width="960" height="546" muted loop playsinline preload="metadata" src="assets/fly.mp4"></video>
+      <video id="fly" poster="assets/fly-3d-poster.jpg" width="960" height="540" muted loop playsinline preload="metadata" src="assets/fly-3d.mp4"></video>
       <button type="button" class="sound" id="sound" aria-pressed="false">
         <span class="en">Sound</span><span class="cs">Zvuk</span>
       </button>
@@ -316,16 +316,16 @@
     <div class="copy">
       <p class="kicker"><span class="en">One egg. One wild flight.</span><span class="cs">Jedno vajíčko. Jeden divoký let.</span></p>
       <h1>Eggie</h1>
-      <p class="sub">Fart &amp; Fly</p>
-      <p class="tagline"><span class="en">Hold to rise. Release to fall. Don't hit the knife.</span><span class="cs">Drž a stoupej. Pusť a padáš. Ať tě nůž mine.</span></p>
-      <p class="lead"><span class="en">An egg in shorts, a tuft of hair, and a tank of gas that runs out. Eat, or the thrust stops.</span><span class="cs">Vajíčko v šortkách, patka vlasů a nádrž plynu, která dojde. Jez, nebo pohon skončí.</span></p>
+      <p class="sub">Fart &amp; Fly 3D</p>
+      <p class="tagline"><span class="en">Hold to rise. Release to fall. Dodge the stalactites.</span><span class="cs">Drž a stoupej. Pusť a padáš. Proleť mezi krápníky.</span></p>
+      <p class="lead"><span class="en">Fly behind Eggie through a 3D cave with waterfalls, bats and glowing lava. Collect food to keep flying and chase the 3D world record. Classic 2D is included as a bonus.</span><span class="cs">Proleť s Eggiem 3D jeskyní plnou vodopádů, netopýrů a žhavé lávy. Sbírej jídlo, doplňuj plyn a zkus překonat světový rekord v 3D. Classic 2D je bonusový režim.</span></p>
       <h2 class="where"><span class="en">Where to play</span><span class="cs">Kde hrát</span></h2>
       <ul class="slots">
-        <li><a class="go" id="windows" href="https://github.com/mrmichal-sketch/eggie-web/releases/download/v1.0.10/Eggie-Windows-1.0.10.zip"><b>Windows</b><span>45 MB</span></a></li>
+        <li><a class="go" id="windows" href="https://github.com/mrmichal-sketch/eggie-web/releases/download/v2.0.0/Eggie-Fart-and-Fly-3D-Windows.zip"><b>Windows</b><span>54 MB</span></a></li>
         <li><a class="go" id="android" href="#android-test"><b>Android</b><span class="en">Become a tester →</span><span class="cs">Chci testovat →</span></a></li>
-        <li><p class="wait" id="app-store"><b>App Store</b><span class="en">Waiting on Apple</span><span class="cs">Čeká na Apple</span></p></li>
+        <li><p class="wait" id="app-store"><b>App Store</b><span class="en">In preparation</span><span class="cs">Připravujeme</span></p></li>
       </ul>
-      <p class="install"><span class="en">Windows 1.0.10: unzip and run. No installer. The system may warn that the publisher is unknown. Android testing is available on Google Play; follow the steps below.</span><span class="cs">Windows 1.0.10: rozbal a spusť. Bez instalace. Systém může varovat, že vydavatel je neznámý. Testování Androidu je dostupné přes Google Play podle návodu níže.</span></p>
+      <p class="install"><span class="en">Windows 2.0.0: unzip and run. No installer. The system may warn that the publisher is unknown. Android testing is available on Google Play; follow the steps below.</span><span class="cs">Windows 2.0.0: rozbal a spusť. Bez instalace. Systém může varovat, že vydavatel je neznámý. Testování Androidu je dostupné přes Google Play podle návodu níže.</span></p>
     </div>
   </section>
 
@@ -344,9 +344,9 @@
         <strong><span class="en">Eat</span><span class="cs">Jez</span></strong>
         <span class="en">Apple, bread, or cheese. Or the thrust stops.</span><span class="cs">Jablko, chleba, nebo sýr. Jinak pohon skončí.</span>
       </li>
-      <li class="knife">
-        <strong><span class="en">Knife</span><span class="cs">Nůž</span></strong>
-        <span class="en">Miss it. At 30 the gap tightens.</span><span class="cs">Mine ho. V třicítce se mezera zúží.</span>
+      <li class="spikes">
+        <strong><span class="en">Stalactites</span><span class="cs">Krápníky</span></strong>
+        <span class="en">Fly through the gap. It tightens as your score climbs.</span><span class="cs">Proleť mezerou. S rostoucím skóre se zužuje.</span>
       </li>
     </ol>
     <div class="note">
@@ -364,7 +364,7 @@
       <p><span class="en">A skateboard. Fart-powered acceleration. Wooden tracks high above the ground. Race through loops, dare the jumps and keep your shell in one piece.</span><span class="cs">Skateboard, prdový pohon a dřevěná dráha vysoko nad zemí. Projeď lopingy, zvládni skoky a udrž skořápku pohromadě.</span></p>
       <p><span class="en">Help us fine-tune steering and performance on real Android phones. Tell us what feels great — and where Eggie cracks.</span><span class="cs">Pomoz nám doladit ovládání a výkon na skutečných telefonech s Androidem. Řekni nám, co tě baví — a kde Eggie praská.</span></p>
       <ul class="slots">
-        <li><p class="wait"><b>App Store</b><span class="en">Waiting on Apple</span><span class="cs">Čekáme na Apple</span></p></li>
+        <li><p class="wait"><b>App Store</b><span class="en">In preparation</span><span class="cs">Čekáme na Apple</span></p></li>
         <li><a class="go" id="drive-android-download" href="#android-test"><b><span class="en">Join the Android test</span><span class="cs">Zapojit se do testování Androidu</span></b><span aria-hidden="true">→</span></a></li>
       </ul>
       <p class="install"><span class="en">Android 7+ · 64-bit ARM. The first Google Play test includes a free local Full Game unlock. Google Play purchases and online record submission are not enabled in this test. Your progress stays on the device.</span><span class="cs">Android 7+ · 64bit ARM. První test přes Google Play nabízí bezplatné místní odemčení plné hry. Google nákupy a odesílání online rekordů v tomto testu nejsou zapojené. Postup se ukládá do zařízení.</span></p>
@@ -380,7 +380,7 @@
     <p class="test-status" id="play-test-status"><span class="en">Both games are now available for closed testing on Google Play. Join the group first, then confirm “Become a tester” for each game using the links below and install it. Group membership alone does not enroll you in either game or start the 14-day test.</span><span class="cs">Obě hry už jsou dostupné pro uzavřené testování na Google Play. Nejprve se připoj do skupiny, potom u každé hry níže potvrď „Stát se testerem“ a nainstaluj ji. Samotné členství ve skupině tě nepřihlásí do testu hry ani nespouští 14denní test.</span></p>
     <ol class="test-steps">
       <li><h3><span class="en">Join the tester group</span><span class="cs">Připoj se ke skupině testerů</span></h3><p><span class="en">Open Google Groups and choose <strong>Join group</strong>. Sign in with the same Google account you use in the Play Store on your phone. You only need to join this group once for both games.</span><span class="cs">Otevři Skupiny Google a zvol <strong>Připojit se ke skupině</strong>. Přihlas se stejným účtem Google, který používáš v Obchodě Play na telefonu. Do této skupiny se stačí připojit jednou pro obě hry.</span></p><a class="test-action" id="tester-group" href="https://groups.google.com/g/eggie-games-testers" target="_blank" rel="noopener noreferrer"><span class="en">1. Join the tester group ↗</span><span class="cs">1. Připojit se ke skupině ↗</span></a><p class="test-small"><span class="en"><strong>The group is an access list, not a game download page.</strong> “No conversations yet” is normal. If you can see “My membership settings”, you are already a member and do not need to join again. Return here and continue with the links in step 2.</span><span class="cs"><strong>Skupina slouží jen jako přístupový seznam, hry se z ní nestahují.</strong> Hláška „Zatím nemáte žádné konverzace“ je v pořádku. Pokud v nabídce vidíš „Nastavení mého členství“, už jsi členem a nemusíš se připojovat znovu. Vrať se sem a pokračuj odkazy v kroku 2.</span></p><p class="test-small"><span class="en">Your email address is not visible to other testers. Choose “No email” when joining if you prefer; membership still works.</span><span class="cs">Ostatní testeři neuvidí tvou e-mailovou adresu. Při připojování si můžeš zvolit „Žádný e-mail“; členství bude fungovat dál.</span></p></li>
-      <li><h3><span class="en">Confirm each game, then install</span><span class="cs">Potvrď test každé hry a nainstaluj ji</span></h3><p><span class="en">Open each game’s link below and choose <strong>Become a tester</strong>. Then follow the link to Google Play and tap <strong>Install</strong>. Repeat for the second game if you can help with both.</span><span class="cs">Otevři odkaz u každé hry níže a zvol <strong>Stát se testerem</strong>. Potom otevři nabídnutý odkaz do Google Play a klepni na <strong>Instalovat</strong>. Pokud můžeš pomoci s oběma hrami, zopakuj to i u druhé.</span></p><div class="test-games"><article class="test-game" id="test-fly"><h4>Eggie: Fart &amp; Fly</h4><p><span class="en">One finger, a gas-powered egg and a kitchen full of trouble.</span><span class="cs">Jeden prst, vajíčko s prdovým pohonem a kuchyně plná nástrah.</span></p><a class="test-action" href="https://play.google.com/apps/testing/com.michalstarek.eggiefly" target="_blank" rel="noopener noreferrer"><span class="en">Become a Fly tester</span><span class="cs">Testovat Fly</span></a></article><article class="test-game" id="test-drive"><h4>Eggie: Fart &amp; Drive</h4><p><span class="en">A skateboard, towering tracks and one very fragile racer.</span><span class="cs">Skateboard, dráhy vysoko nad zemí a jeden pořádně křehký závodník.</span></p><a class="test-action" href="https://play.google.com/apps/testing/com.michalstarek.eggieride" target="_blank" rel="noopener noreferrer"><span class="en">Become a Drive tester</span><span class="cs">Testovat Drive</span></a></article></div><p class="test-small"><span class="en">The QR code opens this guide. It cannot confirm Google’s testing opt-in for you.</span><span class="cs">QR kód otevře tento návod. Přihlášení do testu je potřeba potvrdit u Googlu osobně.</span></p></li>
+      <li><h3><span class="en">Confirm each game, then install</span><span class="cs">Potvrď test každé hry a nainstaluj ji</span></h3><p><span class="en">Open each game’s link below and choose <strong>Become a tester</strong>. Then follow the link to Google Play and tap <strong>Install</strong>. Repeat for the second game if you can help with both.</span><span class="cs">Otevři odkaz u každé hry níže a zvol <strong>Stát se testerem</strong>. Potom otevři nabídnutý odkaz do Google Play a klepni na <strong>Instalovat</strong>. Pokud můžeš pomoci s oběma hrami, zopakuj to i u druhé.</span></p><div class="test-games"><article class="test-game" id="test-fly"><h4>Eggie Fart and Fly 3D</h4><p><span class="en">Play the 3D cave update in the existing Fly closed test once Google makes it available.</span><span class="cs">3D verze bude dostupná ve stávajícím uzavřeném testu Fly, jakmile ji Google zpřístupní.</span></p><a class="test-action" href="https://play.google.com/apps/testing/com.michalstarek.eggiefly" target="_blank" rel="noopener noreferrer"><span class="en">Become a Fly tester</span><span class="cs">Testovat Fly</span></a></article><article class="test-game" id="test-drive"><h4>Eggie: Fart &amp; Drive</h4><p><span class="en">A skateboard, towering tracks and one very fragile racer.</span><span class="cs">Skateboard, dráhy vysoko nad zemí a jeden pořádně křehký závodník.</span></p><a class="test-action" href="https://play.google.com/apps/testing/com.michalstarek.eggieride" target="_blank" rel="noopener noreferrer"><span class="en">Become a Drive tester</span><span class="cs">Testovat Drive</span></a></article></div><p class="test-small"><span class="en">The QR code opens this guide. It cannot confirm Google’s testing opt-in for you.</span><span class="cs">QR kód otevře tento návod. Přihlášení do testu je potřeba potvrdit u Googlu osobně.</span></p></li>
       <li><h3><span class="en">Play, stay enrolled and tell us</span><span class="cs">Hraj, zůstaň v testu a napiš nám</span></h3><p><span class="en">Please remain in the group and opted in to each game for <strong>at least 14 consecutive days</strong>. Play regularly, try different modes and let us know what works and what needs fixing. Each game needs at least 12 testers to qualify for Google’s production-access application.</span><span class="cs">Zůstaň prosím ve skupině i přihlášený do testu každé hry <strong>alespoň 14 dní nepřetržitě</strong>. Pravidelně si zahraj, vyzkoušej různé režimy a napiš nám, co funguje a co potřebuje opravit. Pro žádost o veřejné vydání potřebuje každá hra nejméně 12 testerů.</span></p><a class="test-action" href="mailto:staremicha@gmail.com?subject=Eggie%20Android%20test%20feedback"><span class="en">Send feedback ✉</span><span class="cs">Poslat zkušenosti z hraní ✉</span></a><p class="test-small"><span class="en">Include the game, phone model, Android version and what happened. Honest feedback helps us most; no positive rating or purchase is required.</span><span class="cs">Připiš název hry, model telefonu, verzi Androidu a co se stalo. Nejvíc pomůže upřímná zpětná vazba; kladné hodnocení ani nákup nejsou podmínkou.</span></p></li>
     </ol>
     <details class="test-help"><summary><span class="en">Can't join or find the game?</span><span class="cs">Nejde se připojit nebo najít hru?</span></summary><p><span class="en">Check that Google Groups, the testing page and Google Play use the same Google account. Join the group before opening a game's testing link. Newly added access can take time to appear; try the link again later. These closed tests will not appear in ordinary Play Store searches. If a sign-in opens inside another app, use your regular browser.</span><span class="cs">Zkontroluj, že ve Skupinách Google, na stránce testu i v Obchodě Play používáš stejný účet. Nejprve se připoj do skupiny, teprve potom otevři odkaz na test hry. Nový přístup se může projevit se zpožděním; zkus odkaz později znovu. Uzavřené testy nenajdeš běžným vyhledáváním v obchodě. Pokud se přihlášení otevře uvnitř jiné aplikace, použij běžný prohlížeč.</span></p><p><span class="en">The games need Android 7 or newer and a 64-bit ARM device. Google Play will check compatibility. Managed work, school or supervised accounts may have restrictions.</span><span class="cs">Hry potřebují Android 7 nebo novější a 64bitové zařízení ARM. Kompatibilitu ověří Google Play. Pracovní, školní nebo dozorované účty mohou mít omezení.</span></p></details>
@@ -400,14 +400,14 @@
   </footer>
 <script>
 (function () {
-  var titles = { en: "Eggie games — Fart & Fly · Fart & Drive", cs: "Hry Eggie — Fart & Fly · Fart & Drive" };
+  var titles = { en: "Eggie games — Fart & Fly 3D · Fart & Drive", cs: "Hry Eggie — Fart & Fly 3D · Fart & Drive" };
   var descriptions = {
-    en: "Hold to rise. Release to fall. Dodge the knives, eat to keep the gas, and chase a world top 10.",
-    cs: "Drž a stoupej. Pusť a padáš. Mine nože, jez, ať nedojde plyn, a hoň světovou top 10."
+    en: "Fly through a 3D cave, dodge stalactites and chase a worldwide Top 10.",
+    cs: "Proleť 3D jeskyní, vyhni se krápníkům a zabojuj o světovou Top 10."
   };
   var alts = {
-    en: "Eggie, a grinning egg in denim shorts, launches off a kitchen knife on a fart and bonks a cloud.",
-    cs: "Eggie, usměvavé vajíčko v riflových šortkách, vystartuje z nože na prd a narazí do mraku."
+    en: "Eggie flying through a 3D cave with stalactites, waterfalls and glowing lava.",
+    cs: "Eggie při letu 3D jeskyní s krápníky, vodopády a žhavou lávou."
   };
   var video = document.getElementById("fly");
   var sound = document.getElementById("sound");
